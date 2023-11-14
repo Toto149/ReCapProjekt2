@@ -17,7 +17,7 @@ public class ShopService {
     }
 
     public void placeOrder(Order order){
-        if(!productRepo.productList.contains(order.orderedProducts().keySet())){
+        if(!productRepo.productList.contains(order.orderedProducts().keySet().stream().toList())){
             System.out.println("Eins der Objekte die bestellt wurden, sind nicht in dem ProductRepo vorhanden");
         }
         this.orderRepo.addOrder(order);

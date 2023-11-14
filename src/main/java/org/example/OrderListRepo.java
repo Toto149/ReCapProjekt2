@@ -16,7 +16,7 @@ public class OrderListRepo implements OrderRepoInterface {
     }
     public  List<Order> queryOrder(String query){
         List<Order> queriedOrders = new ArrayList<>();
-        orderList.stream().filter(order -> order.orderId().contains(query)).forEach(queriedOrders::add);
+        orderList.stream().filter(order -> order.orderId().equals(query)).forEach(queriedOrders::add);
         return queriedOrders;
     }
 
